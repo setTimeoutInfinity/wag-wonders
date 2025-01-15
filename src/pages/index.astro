@@ -1,11 +1,36 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import { Image } from "astro:assets";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "@layouts/Layout.astro";
+import HeroImage from "@assets/good-doggy.svg";
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Dog Parks, Treats & Watering Holes | Free Map for Dog Owners">
+  <div class="hero items-start md:items-center bg-base-200 min-h-screen">
+    <div
+      class="hero-content md:grid grid-cols-6 grid-row-4 flex flex-col-reverse"
+    >
+      <div
+        class="col-start-1 md:col-end-5 lg:col-end-4 lg:row-span-full row-start-1 row-end-4 self-start order-2"
+      >
+        <h1 class="text-7xl font-display">Wag Wonders</h1>
+        <p class="py-6 text-xl font-body font-bold md:max-w-md">
+          Woof woof! This is the paw-fect spot for my hooman to find the best
+          snacks, water bowls, and sniff-tastic spots for me to explore!
+        </p>
+        <p class="pb-6 text-xl font-body font-bold md:max-w-md">
+          And the best part? It's all free and community-driven, so we can all
+          paw-sitively thrive together!
+        </p>
+        <button class="btn btn-lg btn-block md:max-w-xs btn-primary shadow-xl"
+          >Let's Go, Pup!</button
+        >
+      </div>
+      <figure
+        class="col-start-3 col-end-7 lg:row-span-full row-start-2 row-end-5 self-end justify-self-end order-1"
+      >
+        <Image src={HeroImage} width={500} alt="A person walking their dog" loading="eager" />
+      </figure>
+    </div>
+  </div>
 </Layout>

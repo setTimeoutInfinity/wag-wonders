@@ -1,0 +1,39 @@
+---
+import { NAV_ITEMS } from "@constants/app";
+
+const currentPath = new URL(Astro.request.url).pathname;
+---
+
+<div class="drawer drawer-end">
+  <input id="wag-wonders-drawer" type="checkbox" class="drawer-toggle" />
+  <div class="drawer-content flex flex-col">
+    <slot />
+  </div>
+  <div class="drawer-side z-30">
+    <label
+      for="wag-wonders-drawer"
+      aria-label="close sidebar"
+      class="drawer-overlay"
+    >
+      <span class="hidden">close sidebar overlay</span>
+    </label>
+
+    <div class="bg-base-200 min-h-full w-80">
+      <div class="flex items-center justify-center p-2 bg-base-300 h-16">
+        <span class="font-display text-2xl">ww</span>
+      </div>
+      <ul class="menu menu-lg bg-base-200 min-h-full w-80 p-4">
+        {
+          NAV_ITEMS.slice(2).map(({ label, Icon, link }) => (
+            <li>
+              <a href={link} class={currentPath === link ? "active" : ""}>
+                <Icon class="w-5 h-5" />
+                {label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</div>

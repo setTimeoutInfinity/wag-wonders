@@ -1,22 +1,38 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+---
+import Navbar from "@components/Navbar.astro";
+import AppDrawer from "@components/AppDrawer.astro";
+import Footer from "@components/Footer.astro";
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+interface Props {
+  title?: string;
+}
+const { title } = Astro.props;
+const titleSuffix = "Wag Wonders";
+---
+
+<!doctype html>
+<html lang="en" date-theme="wagWonder">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title ? `${title} | ${titleSuffix}` : titleSuffix}</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Flavors&family=IM+Fell+DW+Pica:ital@0;1&family=Patrick+Hand&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <AppDrawer>
+      <Navbar />
+
+      <slot />
+
+      <Footer />
+      <div class="md:h-0 h-20"/>
+    </AppDrawer>
+  </body>
+</html>
