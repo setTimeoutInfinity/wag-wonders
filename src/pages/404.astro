@@ -7,13 +7,13 @@ import { Image } from "astro:assets";
 
 <Layout title="Oops! - Not Found">
   <div class="text-center flex flex-col items-center gap-10 my-10">
-    <figure>
+    <figure class="max-w-lg">
       <Image src={HeroImage} alt="404 error page not found" />
     </figure>
     <div class="max-w-md md:text-3xl text-2xl">
       <h1 class="mb-5 font-bold">Ugh oh... 404</h1>
       <p class="mb-5">It looks like you've taken a wrong turn somewhere.</p>
-      <a href="/" class="btn btn-outlined md:btn-lg w-full">
+      <a href="/" class="btn btn-outline btn-secondary md:btn-lg w-full">
         Try heading home
       </a>
     </div>
