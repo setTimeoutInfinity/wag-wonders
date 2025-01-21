@@ -17,7 +17,7 @@ const currentPath = new URL(Astro.request.url).pathname;
       {
         [...NAV_ITEMS].reverse().map(({ label, Icon, link }) => (
           <li>
-            <a href={link} class={currentPath === link ? "active" :""}>
+            <a href={link} class={currentPath === link ? "active" : ""}>
               <Icon class="w-5 h-5" />
               {label}
             </a>
@@ -34,7 +34,8 @@ const currentPath = new URL(Astro.request.url).pathname;
 <div class="btm-nav btm-nav-lg lg:hidden z-30">
   {
     NAV_ITEMS.map(({ label, Icon, link }) => (
-      <button
+      <a
+        href={link}
         class={
           currentPath === link
             ? "active border-primary text-primary font-bold"
@@ -43,7 +44,7 @@ const currentPath = new URL(Astro.request.url).pathname;
       >
         <Icon class="w-5 h-5" />
         <span class="btm-nav-label">{label}</span>
-      </button>
+      </a>
     ))
   }
 
