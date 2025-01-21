@@ -1,6 +1,7 @@
 ---
 import Logo from "@assets/logo.svg";
 import CopyrightIcon from "@icons/copyright.svg";
+import GithubIcon from "@icons/github.svg";
 ---
 
 <footer class="footer bg-neutral text-neutral-content items-center p-4">
@@ -12,4 +13,13 @@ import CopyrightIcon from "@icons/copyright.svg";
       <span>{new Date().getFullYear()} - All right reserved</span>
     </p>
   </aside>
+  <nav class="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
+    <a
+      href="https://github.com/setTimeoutInfinity/wag-wonders"
+      target="_blank"
+      aria-label="wonder wag github repository"
+    >
+      <GithubIcon class="w-8 h-8" />
+    </a>
+  </nav>
 </footer>
