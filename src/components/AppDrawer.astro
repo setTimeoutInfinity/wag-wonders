@@ -4,7 +4,7 @@ import { NAV_ITEMS } from "@constants/app";
 const currentPath = new URL(Astro.request.url).pathname;
 ---
 
-<div class="drawer drawer-end">
+<div class="drawer drawer-end h-full">
   <input id="wag-wonders-drawer" type="checkbox" class="drawer-toggle" />
   <div class="drawer-content flex flex-col">
     <slot />

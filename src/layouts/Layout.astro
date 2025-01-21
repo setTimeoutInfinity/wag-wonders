@@ -29,10 +29,12 @@ const titleSuffix = "Wag Wonders";
     <AppDrawer>
       <Navbar />
 
-      <slot />
+      <main class="h-full">
+        <slot />
+      </main>
 
       <Footer />
-      <div class="md:h-0 h-20"/>
+      <div class="md:min-h-0 min-h-20"></div>
     </AppDrawer>
   </body>
 </html>
