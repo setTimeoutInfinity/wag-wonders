@@ -3,15 +3,21 @@ import { Image } from "astro:assets";
 
 import Layout from "@layouts/Layout.astro";
 import HeroImage from "@assets/good-doggy.svg";
+import SecondHeroImage from "@assets/everyday-life.svg";
+import ThirdHeroImage from "@assets/work-chat.svg";
+import ForthHeroImage from "@assets/open-source.svg";
+
+const listItemClassNames =
+  "flex gap-2 mb-3 items-center before:content-[''] before:w-8 before:h-8 before:bg-no-repeat before:bg-cover before:shrink-0";
 ---
 
 <Layout title="Dog Parks, Treats & Watering Holes | Free Map for Dog Owners">
-  <div class="hero items-start md:items-center bg-base-200 min-h-screen">
+  <div class="hero items-center bg-base-200 min-h-svh">
     <div
-      class="hero-content md:grid grid-cols-6 grid-row-4 flex flex-col-reverse"
+      class="hero-content md:grid grid-cols-6 grid-row-4 flex flex-col-reverse p-0"
     >
       <div
-        class="col-start-1 md:col-end-5 lg:col-end-4 lg:row-span-full row-start-1 row-end-4 self-start order-2"
+        class="col-start-1 md:col-end-5 lg:col-end-4 lg:row-span-full row-start-1 row-end-4 self-start order-2 p-8"
       >
         <h1 class="text-7xl font-display">Wag Wonders</h1>
         <p class="py-6 text-xl font-body font-bold md:max-w-md">
@@ -27,10 +33,126 @@ import HeroImage from "@assets/good-doggy.svg";
         >
       </div>
       <figure
-        class="col-start-3 col-end-7 lg:row-span-full row-start-2 row-end-5 self-end justify-self-end order-1"
+        class="col-start-3 col-end-7 lg:row-span-full row-start-2 row-end-5 self-end justify-self-end order-1 w-full"
       >
-        <Image src={HeroImage} width={500} alt="A person walking their dog" loading="eager" />
+        <Image
+          src={HeroImage}
+          class="w-full"
+          alt="A person walking their dog"
+          loading="eager"
+        />
       </figure>
+    </div>
+  </div>
+
+  <div class="hero min-h-[60vh] bg-neutral py-10">
+    <div
+      class="hero-content flex-col-reverse lg:flex-row lg:max-w-5xl w-full p-0"
+    >
+      <Image
+        class="w-full lg:max-w-md"
+        src={SecondHeroImage}
+        alt=""
+        loading="lazy"
+      />
+      <div class="text-lg mx-8">
+        <h1 class="text-3xl font-bold">Discover Paw-some Spots!</h1>
+        <p class="py-3">
+          Explore exciting locations tailored for your furry friend to:
+        </p>
+        <ul id="wag-wonders-feature-list" class="list-none">
+          <li
+            class={`${listItemClassNames} before:bg-[url('/images/landing/drop.svg')]`}
+          >
+            Hydrate: Find dog-friendly water fountains and cafes offering
+            refreshing drinks
+          </li>
+          <li
+            class={`${listItemClassNames} before:bg-[url('/images/landing/bone.svg')]`}
+          >
+            Snack Time: Visit businesses offering complimentary treats for your
+            pup
+          </li>
+          <li
+            class={`${listItemClassNames} before:bg-[url('/images/landing/park.svg')]`}
+          >
+            Adventure Awaits: Uncover engaging spots for your dog to sniff,
+            explore, and play
+          </li>
+          <li
+            class={`${listItemClassNames} before:bg-[url('/images/landing/dog.svg')]`}
+          >
+            Dive in: Explore locations with waterfront where your furry friend
+            can take a refreshing swim
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero min-h-[60vh] py-10">
+    <div class="hero-content flex-col lg:flex-row lg:max-w-5xl w-full p-0">
+      <div class="text-lg mx-8">
+        <h1 class="text-3xl font-bold">Powered by Dog Lovers Like You!</h1>
+        <p class="py-3">
+          Help build the ultimate guide to dog-friendly spots! Here's how you
+          can contribute:
+        </p>
+        <ul id="wag-wonders-feature-list" class="list-none">
+          <li
+            class={`${listItemClassNames} before:bg-[url('/images/landing/map-pin-plus.svg')]`}
+          >
+            Add Locations: Share your favorite dog-friendly spots.
+          </li>
+          <li
+            class={`${listItemClassNames} before:bg-[url('/images/landing/upload.svg')]`}
+          >
+            Upload Photos: Show what makes the place special for pups.
+          </li>
+          <li
+            class={`${listItemClassNames} before:bg-[url('/images/landing/chat-text.svg')]`}
+          >
+            Review & Comment: Help others by sharing your experience.
+          </li>
+          <li
+            class={`${listItemClassNames} before:bg-[url('/images/landing/seal-check.svg')]`}
+          >
+            Verify Spots: Keep the guide up-to-date with accurate info.
+          </li>
+        </ul>
+      </div>
+
+      <Image
+        class="w-full lg:max-w-md"
+        src={ThirdHeroImage}
+        alt="community lead and maintained"
+        loading="lazy"
+      />
+    </div>
+  </div>
+
+  <div class="hero min-h-[60vh] bg-base-200 py-10">
+    <div
+      class="hero-content flex-col-reverse lg:flex-row lg:max-w-5xl w-full p-0"
+    >
+      <Image
+        class="w-full lg:max-w-md"
+        src={ForthHeroImage}
+        alt="open source and free"
+        loading="lazy"
+      />
+      <div class="text-lg mx-8">
+        <h1 class="text-3xl font-bold">Completely Free and Open-Source</h1>
+        <p class="py-3">
+          Our service is 100% free to use—no hidden fees, no premium
+          memberships. We believe everyone should have access to the best
+          dog-friendly spots without any barriers. That's why we've made the
+          source code available on GitHub, so you can review it, contribute, or
+          even customize it for your own needs. It&rsquo;s all about building a
+          community-driven platform that&rsquo;s transparent and accessible for
+          all dog lovers.
+        </p>
+      </div>
     </div>
   </div>
 </Layout>
