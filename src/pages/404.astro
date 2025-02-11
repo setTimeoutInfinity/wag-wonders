@@ -2,13 +2,12 @@
 import HeroImage from "@assets/page-not-found.svg";
 
 import Layout from "@layouts/Layout.astro";
-import { Image } from "astro:assets";
 ---
 
 <Layout title="Oops! - Not Found">
   <div class="text-center flex flex-col items-center gap-10 my-10">
     <figure class="max-w-lg">
-      <Image src={HeroImage} alt="404 error page not found" />
+      <HeroImage  class="w-full"/>
     </figure>
     <div class="max-w-md md:text-3xl text-2xl">
       <h1 class="mb-5 font-bold">Ugh oh... 404</h1>

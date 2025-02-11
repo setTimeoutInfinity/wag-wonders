@@ -1,6 +1,4 @@
 ---
-import { Image } from "astro:assets";
-
 import Layout from "@layouts/Layout.astro";
 import HeroImage from "@assets/good-doggy.svg";
 import SecondHeroImage from "@assets/everyday-life.svg";
@@ -35,12 +33,7 @@ const listItemClassNames =
       <figure
         class="col-start-3 col-end-7 lg:row-span-full row-start-2 row-end-5 self-end justify-self-end order-1 w-full"
       >
-        <Image
-          src={HeroImage}
-          class="w-full"
-          alt="A person walking their dog"
-          loading="eager"
-        />
+        <HeroImage class="w-full" />
       </figure>
     </div>
   </div>
@@ -49,12 +42,7 @@ const listItemClassNames =
     <div
       class="hero-content flex-col-reverse lg:flex-row lg:max-w-5xl w-full p-0"
     >
-      <Image
-        class="w-full lg:max-w-md"
-        src={SecondHeroImage}
-        alt=""
-        loading="lazy"
-      />
+      <SecondHeroImage class="w-full lg:max-w-md" />
       <div class="text-lg mx-8">
         <h1 class="text-3xl font-bold">Discover Paw-some Spots!</h1>
         <p class="py-3">
@@ -122,12 +110,7 @@ const listItemClassNames =
         </ul>
       </div>
 
-      <Image
-        class="w-full lg:max-w-md"
-        src={ThirdHeroImage}
-        alt="community lead and maintained"
-        loading="lazy"
-      />
+      <ThirdHeroImage class="w-full lg:max-w-md" />
     </div>
   </div>
 
@@ -135,12 +118,7 @@ const listItemClassNames =
     <div
       class="hero-content flex-col-reverse lg:flex-row lg:max-w-5xl w-full p-0"
     >
-      <Image
-        class="w-full lg:max-w-md"
-        src={ForthHeroImage}
-        alt="open source and free"
-        loading="lazy"
-      />
+      <ForthHeroImage class="w-full lg:max-w-md" />
       <div class="text-lg mx-8">
         <h1 class="text-3xl font-bold">Completely Free and Open-Source</h1>
         <p class="py-3">
