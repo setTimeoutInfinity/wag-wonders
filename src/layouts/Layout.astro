@@ -5,8 +5,9 @@ import Footer from "@components/Footer.astro";
 
 interface Props {
   title?: string;
+  footer?: boolean;
 }
-const { title } = Astro.props;
+const { title, footer = true } = Astro.props;
 const titleSuffix = "Wag Wonders";
 ---
 
@@ -24,16 +25,17 @@ const titleSuffix = "Wag Wonders";
       href="https://fonts.googleapis.com/css2?family=Flavors&family=IM+Fell+DW+Pica:ital@0;1&family=Patrick+Hand&display=swap"
       rel="stylesheet"
     />
+    <slot name="head" />
   </head>
   <body class="h-screen w-full">
     <AppDrawer>
       <Navbar />
 
-      <main class="h-full">
+      <main class="h-full relative">
         <slot />
       </main>
 
-      <Footer />
+      {footer && <Footer />}
       <div class="md:min-h-0 min-h-20"></div>
     </AppDrawer>
   </body>

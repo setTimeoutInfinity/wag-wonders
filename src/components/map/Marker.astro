@@ -1,0 +1,64 @@
+---
+import type { Location } from "@/types/map";
+import MarkerPin from "@icons/map-marker.svg";
+import DropIcon from "@icons/drop.svg";
+import DogIcon from "@icons/dog.svg";
+import TreatIcon from "@icons/treat.svg";
+import ParkIcon from "@icons/park.svg";
+import MapPinIcon from "@icons/map-pin.svg";
+
+interface Props {
+  type: Location["type"];
+}
+
+const { type } = Astro.props;
+
+function getMarkerBgColorClass(type: Location["type"]) {
+  switch (type) {
+    case "WATER_FOUNTAIN":
+      return "text-ww-water-blue";
+
+    case "TREAT":
+      return "text-ww-treat-brown";
+
+    case "ADVENTURE":
+      return "text-ww-adventure-green";
+
+    case "SWIM":
+      return "text-ww-swim-blue";
+
+    default:
+      return "text-base-300";
+  }
+}
+
+function getMarkerIcon(type: Location["type"]) {
+  switch (type) {
+    case "WATER_FOUNTAIN":
+      return DropIcon;
+
+    case "TREAT":
+      return TreatIcon;
+
+    case "ADVENTURE":
+      return ParkIcon;
+
+    case "SWIM":
+      return DogIcon;
+
+    default:
+      return MapPinIcon;
+  }
+}
+
+const bgColorClass = getMarkerBgColorClass(type);
+const Icon = getMarkerIcon(type);
+---
+
+<div class="grid place-items-center h-10 w-10">
+  <MarkerPin
+    class={`col-span-full row-span-full w-full h-full ${bgColorClass}`}
+  />
+
+  <Icon class="h-1/2 w-1/2 col-span-full row-span-full z-10" />
+</div>

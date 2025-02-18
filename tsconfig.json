@@ -9,7 +9,10 @@
       "@icons/*": ["src/components/icons/*"],
       "@layouts/*": ["src/layouts/*"],
       "@assets/*": ["src/assets/*"],
-      "@constants/*": ["src/constants/*"]
+      "@constants/*": ["src/constants/*"],
+      "@db/*": ["src/db/*"],
+      "@styles/*": ["src/styles/*"],
+      "@/*": ["src/*"]
     }
   }
 }

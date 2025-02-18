@@ -9,6 +9,15 @@ export default {
         display: ["Flavors", ...defaultTheme.fontFamily.sans],
         body: ["Patrick Hand", ...defaultTheme.fontFamily.sans],
       },
+      colors: {
+        "ww-treat-brown": "#D79C90",
+        "ww-water-blue": "#8fd9fb",
+        "ww-swim-blue": "#B3CEE5",
+        "ww-adventure-green": "#84b067",
+      },
+      zIndex: {
+        810: "810",
+      },
     },
   },
   plugins: [require("daisyui")],

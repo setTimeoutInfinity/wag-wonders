@@ -1,0 +1,21 @@
+.wag-wonders-map-point-popup .leaflet-popup-close-button {
+  display: none;
+}
+
+.wag-wonders-map-point-popup .leaflet-popup-content-wrapper {
+  border-radius: 0;
+  background: unset;
+  box-shadow: none;
+}
+
+.wag-wonders-map-point-popup .leaflet-popup-content {
+  margin: 0;
+}
+
+.wag-wonders-map-point-popup .leaflet-popup-content p {
+  margin: 0.5rem 0;
+}
+
+.wag-wonders-map-point-popup .leaflet-popup-content a {
+  color: unset;
+}

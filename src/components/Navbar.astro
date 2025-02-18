@@ -7,11 +7,11 @@ import { NAV_ITEMS } from "@constants/app";
 const currentPath = new URL(Astro.request.url).pathname;
 ---
 
-<div class="navbar bg-base-300 w-full sticky top-0 z-30 shadow">
-  <div class="flex flex-1">
+<div class="navbar bg-base-300 w-full sticky top-0 z-810 shadow">
+  <a href="/" class="flex flex-1">
     <Logo class="w-10 h-10 text-accent stroke-2" />
     <span class="text-xl ml-3">Wag Wonders</span>
-  </div>
+  </a>
   <div class="hidden flex-none lg:block">
     <ul class="menu menu-horizontal">
       {
@@ -31,7 +31,7 @@ const currentPath = new URL(Astro.request.url).pathname;
   </div>
 </div>
 
-<div class="btm-nav btm-nav-lg lg:hidden z-30">
+<div class="btm-nav btm-nav-lg lg:hidden z-810">
   {
     NAV_ITEMS.map(({ label, Icon, link }) => (
       <a
